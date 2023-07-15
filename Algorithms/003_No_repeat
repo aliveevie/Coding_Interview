@@ -1,0 +1,23 @@
+function permAlone(str) {
+  const permutations = (str) => {
+    if(str.length <= 1) return [str]
+    let regex = /([a-z])\1/i
+    let perms = []
+    for(let i = 0; i < str.length; i++){
+      let current = str[i]
+      let remainingChar = str.slice(0, i) + str.slice(i+1);
+      let gens = permutations(remainingChar)
+      for(let i = 0; i < gens.length; i++){
+        let result = current + gens[i]
+        if(!regex.test(result)){
+          perms.push(result)
+        }
+      }
+    }
+    return perms
+  }
+  return permutations(str).length
+}
+
+let result = permAlone('aab');
+console.log(result)

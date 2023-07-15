@@ -1,0 +1,35 @@
+function updateInventory(arr1, arr2) {
+   let setA = new Set(arr1)
+   let setB = new Set(arr2)
+   for(let elem of setA){
+    for(let elm of setB){
+        if(elem[1] == elm[1]){
+            elem[0] = elem[0] + elm[0]
+            setB.delete(elm)
+        }
+    }
+    
+   } 
+   return [...setA, ...setB].sort((a, b) => {
+       return a[1].localeCompare(b[1])   
+   });
+}
+
+
+// Example inventory lists
+var curInv = [
+    [21, "Bowling Ball"],
+    [2, "Dirty Sock"],
+    [1, "Hair Pin"],
+    [5, "Microphone"]
+];
+
+var newInv = [
+    [2, "Hair Pin"],
+    [3, "Half-Eaten Apple"],
+    [67, "Bowling Ball"],
+    [7, "Toothpaste"]
+];
+
+let result = updateInventory(curInv, newInv);
+console.log(result)

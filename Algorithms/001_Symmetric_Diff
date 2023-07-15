@@ -1,0 +1,20 @@
+function sym(...args) {
+  
+  const sym_of_two = (args1, args2) => {
+   const difference = new Set(args1)
+   const setB = new Set(args2)
+   for(const elem of setB){
+     if(difference.has(elem)){
+        difference.delete(elem)
+     }else{
+       difference.add(elem)
+     }
+   }
+   return [...difference]
+  }
+
+ return args.reduce((acc, prev) => sym_of_two(acc, prev), [])
+
+
+}
+

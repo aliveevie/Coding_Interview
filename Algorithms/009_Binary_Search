@@ -1,0 +1,22 @@
+function binarySearch(searchList, value) {
+  let arrayPath = [];
+  let start = 0
+  let end = searchList.length - 1
+  while(start <= end){
+    let index = Math.floor((start + end) / 2)
+    let target = searchList[index]
+    arrayPath.push(target)
+    if(target === value){
+      return arrayPath
+    }
+    else if(target < value){
+      start = index + 1
+    }else{
+      end = index - 1
+    }
+  }
+  return "Value Not Found"
+}
+
+let result = binarySearch([1,2,3,4,5,6,7], 5)
+console.log(result)
