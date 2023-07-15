@@ -33,7 +33,7 @@ To run the algorithm solution and execute the test cases, follow the instruction
 1. Ensure you have Node.js installed on your machine.
 2. Open a terminal or command prompt and navigate to the project directory.
 3. Install the required dependencies by running `npm install`.
-
+4. Solve all the code
 
 Make sure you have Node.js installed on your machine and configured properly before running the code.
 
